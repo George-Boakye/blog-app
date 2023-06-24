@@ -42,7 +42,7 @@ const Form = ({ editId, setEditId }: IForms) => {
     }
     const updatedBlogData = data.map((entry: IData) => {
       if (entry.id === editId) {
-        return { ...blogData, date: currentDate };
+        return { ...blogData, date: formattedDate };
       }
       return entry;
     });
