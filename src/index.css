@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Jost', sans-serif;
+    @apply  bg-[#F1F1F1];
+}
+
+button{
+    @apply bg-grey py-2 px-4 rounded;
+}
+
+input{
+    @apply w-full  max-w-[350px] p-1 border-2 rounded border-black
+}
