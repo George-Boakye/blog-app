@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
-    "dayjs": "^1.11.8",
+    "date-fns": "^2.30.0",
     "nanoid": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

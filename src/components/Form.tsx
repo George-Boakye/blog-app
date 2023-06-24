@@ -3,7 +3,7 @@ import * as React from "react";
 import { PostContext } from "../context/post-context.tsx";
 import { IData } from "../pages/Home.tsx";
 import { nanoid } from "nanoid";
-import * as dayjs from "dayjs";
+import {format} from "date-fns"
 interface IForms {
   editId?: number | null;
   setEditId: React.Dispatch<React.SetStateAction<number>>;
@@ -28,12 +28,13 @@ const Form = ({ editId, setEditId }: IForms) => {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const userId = nanoid(5);
-    const currentDate = dayjs(new Date()).format("YYYY-MM-DD");
+    const currentDate = new Date();
+    const formattedDate = format(currentDate, 'yyyy-MM-dd');
 
     if (!editId) {
       const updatedBlogData = [
         ...data,
-        { ...blogData, id: userId, date: currentDate },
+        { ...blogData, id: userId, date: formattedDate },
       ];
       setData(updatedBlogData);
       setBlogData({ id: null, title: "", body: "", author: "" });
